@@ -1,138 +1,105 @@
+![Conference](https://img.shields.io/badge/Conference-KIICE%20%7C%20ICFICE%202025-blue)
+![Task](https://img.shields.io/badge/Task-Medical%20Image%20Segmentation-orange)
+![Domain](https://img.shields.io/badge/Domain-Explainable%20AI-success)
+
 # Polyp Segmentation Using Deep Learning Techniques and Explainable AI
 
-📄 Conference: KIICE / ICFICE 2025
-👤 Authors: Mehedi Hasan Emon, Proloy Kumar Mondal, Md Ariful Islam Mozumder, Ayushi Bharti, Hee-Cheol Kim
-🏫 Affiliation: Inje University, Gimhae, Republic of Korea
+📄 **Conference**: KIICE / ICFICE 2025  
+👤 **First Author**: Mehedi Hasan Emon
+🏫 **Affiliation**: Inje University, Gimhae, Republic of Korea  
 
-Overview
+---
 
-This repository accompanies the conference paper:
+## Overview
 
-Polyp Segmentation Using Deep Learning Techniques and Explainable Artificial Intelligence
-KIICE / ICFICE 2025
+This repository accompanies the paper presented at **KIICE / ICFICE 2025**, which investigates **deep learning–based semantic segmentation** of colorectal polyps and integrates **Explainable Artificial Intelligence (XAI)** to enhance model transparency and clinical interpretability.
 
-The study investigates deep learning–based semantic segmentation of colorectal polyps using a DUCK-Net architecture, combined with Explainable AI (XAI) techniques to improve model transparency and clinical interpretability.
+The study applies a **state-of-the-art DUCK-Net segmentation framework** and evaluates its performance on publicly available colonoscopy datasets, with a particular focus on **generalization, robustness, and explainability** rather than proposing a new architecture.
 
-The focus of this work is benchmarking segmentation performance and interpretability, rather than proposing a new architecture.
+---
 
-Key Contributions
+## Key Contributions
 
-Applied a state-of-the-art DUCK-Net segmentation model for colorectal polyp segmentation.
+- Applied **DUCK-Net**, a state-of-the-art deep learning model, for colorectal polyp segmentation.
+- Conducted extensive evaluation on the **Kvasir-SEG dataset**.
+- Achieved strong segmentation performance across **training, validation, and test sets**.
+- Integrated **Explainable AI (Grad-CAM)** to visualize decision-making regions.
+- Demonstrated alignment between model attention maps and clinically relevant polyp regions, supporting trust in AI-assisted diagnosis.
 
-Conducted extensive evaluation on the Kvasir-SEG dataset (1000 annotated colonoscopy images).
+---
 
-Achieved strong generalization performance across train, validation, and test sets:
+## Dataset
 
-Dice (Test): 0.9156
+- **Kvasir-SEG**
+  - 1000 high-resolution colonoscopy images
+  - Pixel-wise ground truth masks
+  - Image resolution range: 332×487 to 1920×1072
+  - Publicly available:  
+    https://www.kaggle.com/datasets/debeshjha1/kvasirseg
 
-mIoU (Test): 0.8443
+---
 
-Accuracy (Test): 0.9730
+## Methodology
 
-Integrated Explainable AI (XAI) using Grad-CAM to visualize model decision regions.
+### Preprocessing
+- Image resizing: **352 × 352**
+- Normalization using mean and standard deviation
+- Data augmentation:
+  - Horizontal & vertical flipping
+  - Random rotation
+  - Random scaling
+  - Random cropping
 
-Demonstrated alignment between model attention maps and clinically relevant polyp regions, supporting trust in AI-assisted diagnosis.
+### Model
+- **DUCK-Net**
+- Supervised learning setup
+- Optimized for semantic segmentation accuracy in medical images
 
-Methodology
-Dataset
+---
 
-Kvasir-SEG
+## Experimental Results
 
-1000 high-resolution colonoscopy images
+The model demonstrates consistent performance across datasets:
 
-Pixel-wise ground truth masks
+- **Dice Score (Test)**: 0.9156  
+- **Mean IoU (Test)**: 0.8443  
+- **Accuracy (Test)**: 0.9730  
 
-Image resolution ranges from 332×487 to 1920×1072
+Results indicate:
+- Stable convergence
+- Minimal overfitting
+- Strong generalization on unseen test data
 
-Preprocessing
+---
 
-Image resizing to 352 × 352
+## Explainable AI (XAI)
 
-Normalization using mean and standard deviation
+To improve interpretability, **Grad-CAM** was applied:
 
-Data augmentation:
+- Highlights image regions contributing most to predictions
+- Warmer colors (red/yellow) indicate higher model attention
+- Demonstrates strong correspondence with annotated polyp regions
 
-Horizontal & vertical flipping
+📌 *See Figure 2 in the paper for Grad-CAM visualization examples.*
 
-Random rotation
+---
 
-Random scaling and cropping
+## Repository Status
 
-Model
+⚠️ **Code Status**: Experimental setup documented  
+- This repository focuses on **methodology, dataset usage, and evaluation results**.
+- Full training and inference code may be released in the future, subject to institutional and dataset licensing approvals.
 
-DUCK-Net (Deep U-Net with enhanced convolutional kernels)
+---
 
-Supervised learning setup
+## Citation
 
-Optimized for semantic segmentation accuracy
+If you use this work, please cite:
 
-Evaluation Metrics
-
-The following metrics were used to evaluate performance:
-
-Dice Coefficient (DSC)
-
-Mean Intersection over Union (mIoU)
-
-Precision
-
-Recall
-
-Accuracy
-
-Performance trends across epochs show:
-
-Stable convergence
-
-Minimal overfitting
-
-Strong generalization on unseen test data
-
-Explainable AI (XAI)
-
-To enhance interpretability, Grad-CAM was applied:
-
-Highlights image regions contributing most to predictions
-
-Warm colors (red/yellow) indicate high model attention
-
-Demonstrates strong correspondence with annotated polyp regions
-
-📌 See Figure 2 (Grad-CAM analysis) in the paper.
-
-Repository Status
-
-⚠️ Code Status: To Be Released
-
-This repository currently focuses on:
-
-Experimental setup
-
-Dataset description
-
-Evaluation protocol
-
-Explainability analysis
-
-Full training and inference code will be released in a future update, subject to dataset licensing and institutional approval.
-
-Publication
-
-📄 Polyp Segmentation Using Deep Learning Techniques and Explainable Artificial Intelligence
-KIICE / ICFICE 2025
-
-📎 Paper PDF included in this repository 
-
-Polyp Segmentation Using Deep L…
-
-License
-
-This repository is intended for academic and research use only.
-
-Contact
-
-Email: mehedihasanemon3913@gmail.com
-
-LinkedIn: LinkedIn
-
-Google Scholar: Google Scholar
+```bibtex
+@inproceedings{Emon2025KIICE,
+  title={Polyp Segmentation Using Deep Learning Techniques and Explainable Artificial Intelligence},
+  author={Emon, Mehedi Hasan and Mondal, Proloy Kumar and Mozumder, Md Ariful Islam and Bharti, Ayushi and Kim, Hee-Cheol},
+  booktitle={Proceedings of KIICE / ICFICE 2025},
+  year={2025}
+}
