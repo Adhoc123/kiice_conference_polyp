@@ -5,7 +5,7 @@
 # Polyp Segmentation Using Deep Learning Techniques and Explainable AI
 
 📄 **Conference**: KIICE / ICFICE 2025  
-👤 **First Author**: Mehedi Hasan Emon
+👤 **First Author**: Mehedi Hasan Emon  
 🏫 **Affiliation**: Inje University, Gimhae, Republic of Korea  
 
 ---
